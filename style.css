@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 * {
     user-select: none;
     -ms-user-select: none;
@@ -17,9 +19,24 @@ body {
     height: 100%;
     overflow: hidden;
     background-color: black;
+    background-image: url(images/BackgroundResized.png)
 }
 
  canvas {
     width: 100%;
     height: 100%;
+}
+
+.Buttons {
+    width: 50%;
+    height: 50%;
+    vertical-align: middle;
+}
+
+h1{
+    text-align: center;
+    font-family: 'Roboto', san-serif;
+    color: white;
+    font-weight: 300;
+    vertical-align: middle;
 }
