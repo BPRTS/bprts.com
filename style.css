@@ -19,7 +19,7 @@ body {
     height: 100%;
     overflow: hidden;
     background-color: black;
-    background-image: url(images/BackgroundResized.png)
+    background-image: url(images/BackgroundResized.png);
 }
 
  canvas {
@@ -29,13 +29,15 @@ body {
 canvas, .buttonfancy {
   position: absolute;
   width: 150px;
-  height: 100px;
+  height: 50px;
   border-radius: 10px;
+  left: 50%;
 }
 
 .buttonfancy {
   opacity: 1;
   z-index: 1;
+  font-family: Roboto;
 }
 
 .buttonfancy:hover {
