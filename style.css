@@ -32,16 +32,35 @@ canvas, .buttonfancy {
   height: 50px;
   border-radius: 10px;
   left: 50%;
+  top: 50%;
 }
 
 .buttonfancy {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  text-align: center;
   opacity: 1;
   z-index: 1;
-  font-family: Roboto;
+  border-color: white;
+  transition-duration: 1s;
+  font-size: larger;
+  font-weight: 500;
 }
 
 .buttonfancy:hover {
   opacity: 0;
+}
+
+button {
+  border-style: none;
+  text-decoration: none;
+  color: black;
+  font-family: Roboto;
+  vertical-align: middle;
+  font-size: large;
 }
 
 
