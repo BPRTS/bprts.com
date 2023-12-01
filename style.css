@@ -23,14 +23,25 @@ body {
 }
 
  canvas {
-    width: 100%;
-    height: 100%;
+  z-index: 0;
+}
+
+canvas, .buttonfancy {
+  position: absolute;
+  width: 150px;
+  height: 100px;
+  border-radius: 10px;
 }
 
 .buttonfancy {
-    width: 10%;
-    height: 10%;
+  opacity: 1;
+  z-index: 1;
 }
+
+.buttonfancy:hover {
+  opacity: 0;
+}
+
 
 .Buttons {
     width: 50%;
