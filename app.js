@@ -2,6 +2,9 @@ import {
     WaveGroup
 } from './wavegroup.js';
 
+var lastUpdate = Date.now();
+var myInterval = setInterval(tick, 0);
+
 class App {
     constructor() {
         this.canvas = document.createElement('canvas');
@@ -13,7 +16,6 @@ class App {
         this.resize();
 
         requestAnimationFrame(this.animate.bind(this));
-
         
     }
 
@@ -35,6 +37,15 @@ class App {
 
         requestAnimationFrame(this.animate.bind(this));
     }
+}
+
+function tick() {
+    var now = Date.now();
+    var dt = now - lastUpdate;
+    lastUpdate = now;
+
+    update(dt);
+    render(dt);
 }
 
 window.onload = () => {

@@ -32,18 +32,13 @@ body {
     height: 10%;
 }
 
-.buttonfancy {
-    width: 10%;
-    height: 10%;
-}
-
 .Buttons {
     width: 50%;
     height: 50%;
     vertical-align: middle;
 }
 
-h1{
+h1 {
     text-align: center;
     font-family: 'Roboto', san-serif;
     color: white;
