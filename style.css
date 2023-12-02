@@ -26,35 +26,37 @@ body {
   z-index: 0;
 }
 
-canvas, .buttonfancy {
+/* canvas, .Productions {
   position: absolute;
   width: 150px;
   height: 50px;
   border-radius: 10px;
   left: 50%;
   top: 50%;
-}
+} */
 
-.buttonfancy {
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: white;
+.homePageButtons {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   text-align: center;
-  opacity: 1;
-  z-index: 1;
-  border-color: white;
-  transition-duration: 1s;
-  font-size: larger;
-  font-weight: 500;
 }
 
-.buttonfancy:hover {
-  opacity: 0;
+.btn {
+  
+}
+.about {
+  border-style: none;
+  text-decoration: none;
+  color: white;
+  font-family: Roboto;
+  vertical-align: middle;
+  font-size: large;
+  background-color: transparent;
 }
 
-button {
+.productions {
   border-style: none;
   text-decoration: none;
   color: black;
@@ -63,6 +65,46 @@ button {
   font-size: large;
 }
 
+.about {
+  
+}
+
+/* .productions {
+  overflow: hidden;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  opacity: 1;
+  border-color: white;
+  transition-duration: 1s;
+  font-size: larger;
+  font-weight: 500;
+  transition: transform 0.5s ease-in-out;
+  align-items: center;
+  text-align: center;
+  background-color: white;
+} */
+
+@keyframes fadeInDown {
+  100% {
+    opacity: 0;
+    /* transform: translateY(-20px); */
+  }
+  0% {
+    opacity: 1;
+    /* transform: translateY(0); */
+  }
+}
+
+.productions:hover {
+  animation-name: fadeInDown;
+  animation-duration: 0.1s;
+  animation-fill-mode: forwards;
+}
+
+button {
+  cursor: pointer;
+}
 
 .Buttons {
     width: 50%;
