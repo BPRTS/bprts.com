@@ -30,25 +30,28 @@ body {
 .waveForm {
   width: 150px;
   height: 50px;
-  border-radius: 10px;
   left: 50%;
   top: 50%;
 }
 
+.waveForm, .homePageButtons button {
+  border-radius: 10px;
+}
+
 .homePageButtons {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  display: inline;
+  top: 75%;
+  left: 25%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 100%;
+  display: inline-block;
 }
 
 .homePageButtons button {
   font-family: Roboto;
   font-size: large;
-  padding: 5px;
-  border-radius: 10px;
+  padding: 5px; 
   width: 150px;
   height: 50px;
   text-decoration: none;
@@ -59,6 +62,8 @@ body {
   border-color: white;
   color: white;
   background-color: transparent;
+  position: absolute;
+  right: 200px;
 }
 
 .productions {
@@ -69,33 +74,13 @@ body {
   position: absolute;
 }
 
-/* .productions {
-  overflow: hidden;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  opacity: 1;
-  border-color: white;
-  transition-duration: 1s;
-  font-size: larger;
-  font-weight: 500;
-  transition: transform 0.5s ease-in-out;
-  align-items: center;
-  text-align: center;
-  background-color: white;
-} */
-
 @keyframes fadeInDown {
   100% {
     opacity: 0.1;
     color: transparent;
-    
-    
-    /* transform: translateY(-20px); */
   }
   0% {
     opacity: 1;
-    /* transform: translateY(0); */
   }
 }
 
