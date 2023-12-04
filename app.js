@@ -2,14 +2,15 @@ import {
     WaveGroup
 } from './wavegroup.js';
 
-var lastUpdate = Date.now();
-var myInterval = setInterval(tick, 0);
-
 class App {
     constructor() {
+        const div = document.querySelector('.productionButton');
+
         this.canvas = document.createElement('canvas');
         this.ctx = this.canvas.getContext('2d');
-        document.body.appendChild(this.canvas);
+        this.canvas.classList.add('waveForm');
+        div.appendChild(this.canvas);
+        
         this.WaveGroup = new WaveGroup();
 
         window.addEventListener('resize', this.resize.bind(this), false);
@@ -37,15 +38,6 @@ class App {
 
         requestAnimationFrame(this.animate.bind(this));
     }
-}
-
-function tick() {
-    var now = Date.now();
-    var dt = now - lastUpdate;
-    lastUpdate = now;
-
-    update(dt);
-    render(dt);
 }
 
 window.onload = () => {

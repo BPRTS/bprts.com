@@ -20,20 +20,20 @@ body {
     overflow: hidden;
     background-color: black;
     background-image: url(images/BackgroundResized.png);
+    z-index: 0;
 }
 
- canvas {
-  z-index: 0;
+ .waveForm {
+  z-index: -1;
 }
 
-/* canvas, .Productions {
-  position: absolute;
+.waveForm {
   width: 150px;
   height: 50px;
   border-radius: 10px;
   left: 50%;
   top: 50%;
-} */
+}
 
 .homePageButtons {
   position: absolute;
@@ -41,32 +41,32 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 100%;
 }
 
-.btn {
-  
-}
-.about {
-  border-style: none;
-  text-decoration: none;
-  color: white;
+.homePageButtons button {
   font-family: Roboto;
-  vertical-align: middle;
   font-size: large;
+  padding: 5px;
+  border-radius: 10px;
+  width: 150px;
+  height: 50px;
+  text-decoration: none;
+}
+
+.about {
+  border-style: solid;
+  border-color: white;
+  color: white;
   background-color: transparent;
 }
 
 .productions {
+  z-index: 1;
   border-style: none;
-  text-decoration: none;
   color: black;
-  font-family: Roboto;
-  vertical-align: middle;
-  font-size: large;
-}
-
-.about {
-  
+  background-color: white;
+  position: absolute;
 }
 
 /* .productions {
@@ -87,7 +87,10 @@ body {
 
 @keyframes fadeInDown {
   100% {
-    opacity: 0;
+    opacity: 0.1;
+    color: transparent;
+    
+    
     /* transform: translateY(-20px); */
   }
   0% {
@@ -98,8 +101,9 @@ body {
 
 .productions:hover {
   animation-name: fadeInDown;
-  animation-duration: 0.1s;
+  animation-duration: 0.25s;
   animation-fill-mode: forwards;
+  cursor: none;
 }
 
 button {
@@ -119,3 +123,68 @@ h1 {
     font-weight: 300;
     vertical-align: middle;
 }
+
+.navigation {
+  position: sticky;
+  width: 75px;
+  height: 100%;
+  background-color: rgba(92, 92, 92, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.homeNavButton img {
+  position: fixed;
+  top: 10px;
+  max-width: 100%;
+  scale: 75%;
+}
+
+.navigation a {
+  font-family: 'Roboto', san-serif;
+  font-weight: lighter;
+  color: white;
+  text-decoration: none;
+
+}
+
+.contact {
+  position: fixed;
+  bottom: 10px;
+}
+
+.subjects {
+  padding-top: 200px;
+  padding-bottom: 250px;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle;
+  list-style-type: none;
+}
+
+.subjects img, .contact img{
+  display: block;
+  scale: 40%;
+  padding-top: 10px;
+  align-content: center;
+  max-width: 100%;
+}
+
+.mePictures img {
+  position: absolute;
+}
+
+.me {
+  transform: translate(2048px, -500px);
+  z-index: 1;
+  scale: 50%;
+}
+
+.meShadow {
+  transform: translate(1800px, -450px);
+  z-index: 0;
+  scale: 55%;
+
+}
+
