@@ -40,6 +40,6 @@ class App {
     }
 }
 
-window.onload = () => {
+window.addEventListener('load', () => {
     new App();
-};
+});

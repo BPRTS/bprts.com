@@ -31,15 +31,6 @@ header {
   justify-content: center;
 }
 
-.stickman {
-  z-index: -1;
-  width: 150px;
-  height: 50px;
-  left: 50%;
-  top: 50%;
-  position: absolute;
-}
-
 .waveForm {
   z-index: -1;
   width: 150px;
@@ -47,6 +38,14 @@ header {
   /* left: 50%;
   top: 50%; */
   right: 0;
+  position: absolute;
+}
+
+.stickman {
+  z-index: -1;
+  width: 150px;
+  height: 50px;
+  left: 0;
   position: absolute;
 }
 
@@ -70,7 +69,7 @@ header {
   margin-right: 25px;
 }
 
-.homePageButtons button {
+.homePageButtons button { 
   font-family: Roboto;
   font-size: large;
   padding: 5px; 
