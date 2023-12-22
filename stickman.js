@@ -14,16 +14,37 @@ class Stickman {
     resize() {
         this.stageWidth = this.canvas.clientWidth;
         this.stageHeight = this.canvas.clientHeight;
-
+    
         this.canvas.width = this.stageWidth;
         this.canvas.height = this.stageHeight;
-
-        // Draw the head (arc)
+    
+        this.ctx.clearRect(0, 0, this.stageWidth, this.stageHeight);
+    
+        const centerX = this.stageWidth / 2;
+        const centerY = this.stageHeight / 2;
+        const radius = 20;
+    
+        // Set the stroke and fill styles to white
+        this.ctx.strokeStyle = "white";
+        this.ctx.fillStyle = "white";
+    
+        // Draw the stickman
         this.ctx.beginPath();
-        this.ctx.arc(100, 100, 20, 0, Math.PI * 2); // Head
-        this.ctx.stroke(); // Outline the arc
-        this.ctx.fillStyle = "blue"; // Set the fill color
-        this.ctx.fill(); // Fill the arc with blue
+        this.ctx.arc(centerX, centerY - radius - 10, radius -10, 0, Math.PI * 2); // Head
+        this.ctx.moveTo(centerX, centerY - radius); // Body
+        this.ctx.lineTo(centerX, centerY + radius); // Legs
+        this.ctx.moveTo(centerX - radius, centerY - 5); // Arms
+        this.ctx.lineTo(centerX + radius, centerY - 5);
+        this.ctx.stroke();
+    
+        // Add waving animation
+        const angle = Math.sin(Date.now() / 200) * 0.5; // Adjust the 200 to change the waving speed
+        this.ctx.beginPath();
+        this.ctx.moveTo(centerX - radius, centerY - radius);
+        this.ctx.lineTo(centerX - 10 * Math.sin(angle), centerY - radius + 10);
+        this.ctx.stroke();
+    
+        requestAnimationFrame(this.resize.bind(this)); // Create a smooth animation
     }
 }
 
