@@ -15,15 +15,24 @@ html {
 }
 
 body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: black;
-    background-image: url(images/BackgroundResized.png); 
-    background-repeat: round;
-    background-size: 100%;
-    z-index: 0;
+  /* display: flex; */
+  width: 100%;
+  flex-direction: column;
+  z-index: -1;
+  min-height: 100svh;
+  font-family: Roboto;
 }
+
+main {
+  /* width: 100%; */
+  height: 100svh;
+  background-image: url(images/BackgroundResized.png); 
+  background-repeat: no-repeat;
+  /* background-size: 100%; */
+  z-index: 0;
+}
+
+
 
 @keyframes moveDown {
   0% {
@@ -57,10 +66,6 @@ body {
   animation: moveDown 60s linear infinite; /* Adjust time as needed */
 }
 
-.BPRTSLogoMovingContainer {
-
-}
-
 header {
   display: flex;
   align-items: center;
@@ -77,15 +82,7 @@ header {
   position: absolute;
 }
 
-.stickman {
-  z-index: -1;
-  width: 150px;
-  height: 50px;
-  left: 0;
-  position: absolute;
-}
-
-.stickman, .waveForm, .homePageButtons button {
+.waveForm, .homePageButtons button {
   border-radius: 10px;
 }
 
@@ -166,27 +163,101 @@ h1 {
     vertical-align: middle;
 }
 
-.navigation {
-  position: sticky;
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
   width: 75px;
-  height: 100%;
-  background-color: rgba(92, 92, 92, 0.1);
-  backdrop-filter: blur(10px); 
+  padding: 0;
+  background-color: rgba(50, 50, 50, 0.1);
+  backdrop-filter: blur(10px);
+  transition: all .2s ease-in-out;
 }
 
-.navigation :hover {
-  margin-right: 250px;
+header:hover {
+  width: 250px;
 }
+
+header:hover nav ul a{
+  width: 230px;
+  padding-right: 70px;
+}
+
+header:hover nav ul a p {
+  opacity: 1;
+  visibility: visible;
+  transition: all .2s ease-in-out;
+}
+
+
+nav ul li:hover a p:before {
+  width: 100%
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 100%;
+  height: 100%;
+  width: 0;
+}
+
+nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  vertical-align: middle;
+  list-style-type: none;
+}
+
+nav ul a {
+  position: relative;
+}
+
+
+nav ul a p, .contact a p{
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  font-size: 18;
+  line-height: 38px;
+  font-weight: 300;
+  white-space: nowrap;
+  color: #fff;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2 ease-in-out;
+}
+
+nav ul a p::before {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 0;
+}
+
+nav ul li a {
+  display: inline-block;
+  vertical-align: middle;
+}
+
 
 .navigation nav, .contact{
   left: 0px;
 }
 
-.navigation ul {
+nav ul {
   list-style-type: none;
+
 }
 
-.navigation img {
+nav img, .contact {
   max-height: 75px;
 }
 
@@ -199,33 +270,15 @@ h1 {
   left: 0px;
 }
 
-.navigation a {
-  font-family: 'Roboto', san-serif;
-  font-weight: lighter;
-  color: white;
-  text-decoration: none;
-
-}
-
 .contact {
   position: fixed;
   bottom: 10px;
 }
 
-.subjects {
-  display: flex;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  vertical-align: middle;
-  list-style-type: none;
-}
-
 .subjects img, .contact img{
   display: block;
   scale: 40%;
-  padding-top: 10px;
+  /* padding-top: 10px; */
   align-content: center;
   max-width: 100%;
 }
