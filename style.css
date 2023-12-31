@@ -179,15 +179,18 @@ header:hover {
   width: 250px;
 }
 
-header:hover nav ul a{
-  width: 230px;
-  padding-right: 70px;
+header:hover ul a{
+  width: 200px;
+  padding-right: 50px;
 }
 
-header:hover nav ul a p {
+
+
+header:hover ul a p {
   opacity: 1;
   visibility: visible;
   transition: all .2s ease-in-out;
+  margin-left: 25px;
 }
 
 
@@ -219,8 +222,11 @@ nav ul a {
   position: relative;
 }
 
+.contact img {
+  max-height: 75px;
+}
 
-nav ul a p, .contact a p{
+ul a p {
   position: absolute;
   top: 25%;
   left: 25%;
@@ -228,10 +234,11 @@ nav ul a p, .contact a p{
   line-height: 38px;
   font-weight: 300;
   white-space: nowrap;
-  color: #fff;
+  color: white;
   opacity: 0;
   visibility: hidden;
   transition: all 0.2 ease-in-out;
+  mix-blend-mode: difference;
 }
 
 nav ul a p::before {
@@ -240,6 +247,27 @@ nav ul a p::before {
   bottom: 8px;
   left: 0;
   width: 0;
+  color: #fff;
+}
+
+
+ul li a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transition: transform 0.25s;
+  transform-origin: 0 0;
+  transform: scaleX(0);
+
+
+}
+
+ul li a:hover::before {
+  transform: scaleX(1);
 }
 
 nav ul li a {
@@ -247,6 +275,24 @@ nav ul li a {
   vertical-align: middle;
 }
 
+.tag-list {
+display: flex;
+padding: 1rem;
+gap: 1rem;
+list-style: none;
+}
+
+.scroller {
+  max-width: 250px;
+  padding-left: 50px;
+  outline: 3px solid lime;
+  z-index: 10;
+}
+
+.scroller__inner {
+  display: flex;
+
+}
 
 .navigation nav, .contact{
   left: 0px;
@@ -281,6 +327,7 @@ nav img, .contact {
   /* padding-top: 10px; */
   align-content: center;
   max-width: 100%;
+  mix-blend-mode: difference;
 }
 
 .mePictures img {
