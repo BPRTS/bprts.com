@@ -60,7 +60,7 @@ main {
   height: 100%;
   position: absolute;
   background-image: url(images/Logo/BPRTS\ Logo.png);
-  background-size: auto;
+  background-size: 75%;
   background-repeat: repeat-y;
   mix-blend-mode: overlay;
   animation: moveDown 60s linear infinite; /* Adjust time as needed */
@@ -95,6 +95,10 @@ header {
   text-align: center;
   display: flex;
 
+}
+
+header ul li {
+  list-style: none;
 }
 
 .about {
@@ -220,6 +224,7 @@ nav {
 
 nav ul a {
   position: relative;
+  text-decoration: none;
 }
 
 .contact img {
@@ -276,22 +281,33 @@ nav ul li a {
 }
 
 .tag-list {
-display: flex;
-padding: 1rem;
-gap: 1rem;
-list-style: none;
+  margin: 0;
+  display: flex;
+  padding-inline: 0;
+  gap: 1rem;
+  list-style: none;
+}
+
+.tag-list li {
+  padding: 1rem;
+  color: white;
+  background-color: black;
+  opacity: 0.5;
+  border-radius: 0.5rem;
 }
 
 .scroller {
-  max-width: 250px;
+  max-width: 300px;
   padding-left: 50px;
   outline: 3px solid lime;
   z-index: 10;
+  overflow: hidden;
+
 }
 
 .scroller__inner {
   display: flex;
-
+  padding-block: 1rem;
 }
 
 .navigation nav, .contact{
