@@ -449,6 +449,22 @@ nav img, .contact {
     z-index: 1000;
     backdrop-filter: none;
     background-color: transparent;
+    pointer-events: none;
+  }
+
+  header nav {
+    position: absolute;
+    right: 0;
+    left: auto;
+    width: 250px;
+  }
+
+  header ul, header button {
+    pointer-events: auto;
+  }
+
+  .contact {
+    position: relative;
   }
 
   .copyright {
@@ -457,8 +473,8 @@ nav img, .contact {
 
   header:hover {
     width: 100%;
-    background-color: rgba(50, 50, 50, 0.1);
-    backdrop-filter: blur(10px);
+    background-color: rgba(31, 31, 31, 0.712);
+    backdrop-filter: blur(10px) grayscale(50%);
   }
 
   .BPRTSLogoBackground {
@@ -496,13 +512,18 @@ nav img, .contact {
     z-index: 1001;
   }
 
-  .primary-navigation {
+  header button {
+    transform: rotate(0deg);
+    transition: rotate 350ms ease-in;
+  }
+
+  .primary-navigation[data-visible="false"] {
     transform: translateX(100%);
+    transition: transform 350ms ease-in;
   }
 
   .primary-navigation[data-visible="true"] {
-    
+    transform: translateX(0);
+    transition: transform 350ms ease-in;
   }
-
-
 }
