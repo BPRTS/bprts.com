@@ -312,37 +312,6 @@ ul li a:hover .scroller{
   /* font-weight: 5000; */
 }
 
-.scroller {
-  transition: all 0.2s ease-in-out;
-  opacity: 0;
-  height: 5px;
-  max-width: 175px;
-  /* border: 3px solid lime; */
-  z-index: 10;
-  margin-left: 75px;
-  position: absolute;
-  bottom: 0;
-}
-
-.scroller__inner {
-  padding-block: 1rem;
-}
-
-.scroller[data-animated="true"] {
-  overflow: hidden;
-  mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
-}
-
-.scroller[data-animated="true"] .tag-list {
-  flex-wrap: nowrap;
-  animation: scroll 5s linear infinite;
-}
-
-.bruh {
-  background-color: red;
-  color: red;
-}
-
 @keyframes scroll {
   to {
     transform: translate(calc(-200% + 9px));
@@ -408,6 +377,7 @@ nav img, .contact {
 }
 
 .introduction img {
+  display: none;
   position: absolute;
 }
 
@@ -453,10 +423,20 @@ nav img, .contact {
   .mePictures {
     display: none;
   }
+
   .introduction {
     left: 25px;
     top: 50px;
   }
+
+  .introduction img{
+    display: block;
+    position: relative;
+    left: 0px;
+    max-width: 250px;
+    padding-bottom: 50px;
+  }
+
   header {
     position: fixed;
     top: 0;
@@ -470,5 +450,6 @@ nav img, .contact {
 
   .homePageButtons {
     left: 190px;
+    top: 700px;
   }
 }
