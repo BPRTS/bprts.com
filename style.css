@@ -61,8 +61,8 @@ main {
   height: 100%;
   position: absolute;
   background-image: url(images/Logo/BPRTS\ Logo.png);
-  background-size: 75%;
-  background-repeat: repeat-y;
+  background-size: 1500px;
+  background-repeat: repeat-y ;
   mix-blend-mode: overlay;
   animation: moveDown 60s linear infinite; /* Adjust time as needed */
 }
@@ -393,7 +393,7 @@ nav img, .contact {
 .introduction {
   position: absolute;
   font-size: medium;
-  left: 500px;
+  left: 25%;
   top: 250px;
   /* transform: scale(0.50);   */
 }
@@ -447,4 +447,28 @@ nav img, .contact {
   opacity: 25%;
   left: 0px;
   color: white;
+}
+
+@media (max-width: 35em) {
+  .mePictures {
+    display: none;
+  }
+  .introduction {
+    left: 25px;
+    top: 50px;
+  }
+  header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: auto;
+    z-index: 1000;
+  }
+  .BPRTSLogoBackground {
+    display: none;
+  }
+
+  .homePageButtons {
+    left: 190px;
+  }
 }
