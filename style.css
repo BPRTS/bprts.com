@@ -12,7 +12,7 @@
 
 html {
     width: 100%;
-    height: 100%;
+    height: 100svh;
 }
 
 body {
@@ -363,7 +363,7 @@ nav img, .contact {
   position: absolute;
   font-size: medium;
   left: 25%;
-  top: 250px;
+  bottom: 33%;
   /* transform: scale(0.50);   */
 }
 
@@ -383,6 +383,10 @@ nav img, .contact {
 
 .introduction div {
   max-width: 300px;
+}
+
+.mobile-nav-toggle {
+  display: none;
 }
 
 
@@ -433,7 +437,7 @@ nav img, .contact {
     display: block;
     position: relative;
     left: 0px;
-    max-width: 250px;
+    max-width: 200px;
     padding-bottom: 50px;
   }
 
@@ -443,13 +447,62 @@ nav img, .contact {
     right: 0;
     left: auto;
     z-index: 1000;
+    backdrop-filter: none;
+    background-color: transparent;
   }
+
+  .copyright {
+    display: none;
+  }
+
+  header:hover {
+    width: 100%;
+    background-color: rgba(50, 50, 50, 0.1);
+    backdrop-filter: blur(10px);
+  }
+
   .BPRTSLogoBackground {
     display: none;
   }
 
   .homePageButtons {
     left: 190px;
-    top: 700px;
+    top: 600px;
   }
+
+  .introduction h1 {
+    font-size: 65px;
+    margin-bottom: 25px;
+  }
+  
+  .introduction h2 {
+    font-size: 40px;
+  }
+
+  .homeNavButton {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    top: 50px;
+    background: url(images/Icons/Nav/icons8-hamburger-100.png);
+    background-size: 2rem;
+    background-repeat: no-repeat;
+    border: 0;
+    width: 2rem;
+    aspect-ratio: 1;
+    z-index: 1001;
+  }
+
+  .primary-navigation {
+    transform: translateX(100%);
+  }
+
+  .primary-navigation[data-visible="true"] {
+    
+  }
+
+
 }

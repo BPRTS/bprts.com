@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
         <title></title>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="nav.js" defer></script>
         <head>
             <body>
                 <div class="BPRTSLogoMovingContainer">
@@ -17,10 +18,12 @@
                 <script type="module" src="app.js"> </script>
                 <script type="module" src="main.js"></script>
                 <header class=navigation>
-                    <button><span class="sr-only">Menu</span></button>
+                    <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                        <span class="sr-only"></span>
+                    </button>
                     <a class="homeNavButton" href="https://bprts.com/"> <img src="images/Logo/BPRTS Logo.png" alt=""></a>
                     <nav class="subjects">
-                        <ul>
+                        <ul id="primary-navigation" data-visible="false" class="primary-navigation">
                             <li>
                                 <a href="Youtube.com"> <img src="images/Icons/Nav/About.png" alt=""><p>About</p></a>                      
                             </li>
@@ -41,7 +44,7 @@
                             </li>
                         </ul>
                     </nav>
-                    <ul>
+                    <ul id="primary-navigation" data-visible="false" class="primary-navigation">
                         <li>
                             <a class="contact" href="Youtube.com"> <img src="images/Icons/Nav/Contact.png" alt=""><p>Contact</p></a>
                         </li>
