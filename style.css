@@ -450,13 +450,9 @@ nav img, .contact {
     backdrop-filter: none;
     background-color: transparent;
     pointer-events: none;
-  }
-
-  header nav {
-    position: absolute;
-    right: 0;
-    left: auto;
-    width: 250px;
+    justify-content: right;
+    padding-right: 25px;
+    transition: all .2s ease-in-out;
   }
 
   header ul, header button {
@@ -465,6 +461,7 @@ nav img, .contact {
 
   .contact {
     position: relative;
+    margin-top: 100px;
   }
 
   .copyright {
@@ -475,6 +472,10 @@ nav img, .contact {
     width: 100%;
     background-color: rgba(31, 31, 31, 0.712);
     backdrop-filter: blur(10px) grayscale(50%);
+  }
+
+  header:hover .mobile-nav-toggle {
+    opacity: 0;
   }
 
   .BPRTSLogoBackground {
@@ -499,6 +500,18 @@ nav img, .contact {
     display: none;
   }
 
+  .navigation nav {
+    left: auto;
+    right: -75px;
+    /* padding-right: 50px; */
+    transition: all .2s ease-in-out;
+  }
+
+  header:hover nav {
+    padding-right: 50px;
+    transition: all .2s ease-in-out;
+  }
+
   .mobile-nav-toggle {
     display: block;
     position: absolute;
@@ -517,13 +530,23 @@ nav img, .contact {
     transition: rotate 350ms ease-in;
   }
 
-  .primary-navigation[data-visible="false"] {
-    transform: translateX(100%);
-    transition: transform 350ms ease-in;
+  ul li a::before {
+    transition: transform 0.20s;
+    transform: scaleX(0);
+    transform-origin: 125px;
   }
 
-  .primary-navigation[data-visible="true"] {
-    transform: translateX(0);
-    transition: transform 350ms ease-in;
+  ul li a:hover::before {
+    transform: scaleX(-1);
   }
+
+  /* .primary-navigation[data-visible="false"] {
+    transform: translateX(110%);
+    transition: transform 350ms ease-in;
+  } */
+
+  /* .primary-navigation[data-visible="true"] {
+    transform: translateX(0%);
+    transition: transform 350ms ease-in;
+  } */
 }
