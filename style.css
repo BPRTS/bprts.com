@@ -61,7 +61,7 @@ main {
   height: 100%;
   position: absolute;
   background-image: url(images/Logo/BPRTS\ Logo.png);
-  background-size: 1500px;
+  background-size: 1250px;
   background-repeat: repeat-y ;
   mix-blend-mode: overlay;
   animation: moveDown 60s linear infinite; /* Adjust time as needed */
